@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - xdmf_slicing
   pull_request:
     branches:
       - main
