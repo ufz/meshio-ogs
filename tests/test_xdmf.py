@@ -85,7 +85,7 @@ def test_time_series():
     with meshio.xdmf.TimeSeriesReader(filename) as reader:
         points, cells = reader.read_points_cells()
         for k in range(reader.num_steps):
-            t, pd, cd = reader.read_data(k)
+            t, pd, cd, fd = reader.read_data(k)
             assert np.abs(times[k] - t) < 1.0e-12
             for key, value in pd.items():
                 assert np.all(np.abs(value - point_data[k][key]) < 1.0e-12)
